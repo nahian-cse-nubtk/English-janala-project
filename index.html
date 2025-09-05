@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Zanala</title>
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind and daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- external css -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+<header>
+    <!-- navber starts here -->
+    <nav>
+    <div class="navbar bg-base-100 shadow-sm px-10">
+    <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li><a class="btn btn-outline "><img src="assets/fa-circle-question.png" alt="" srcset=""> FAQ</a></li>
+        <li>
+          <a class="btn btn-outline "><img src="assets/fa-book-open.png" alt="" srcset=""> Learn</a>
+        </li>
+        <li>    <a class="btn btn-outline "><img src="assets/fa-arrow-right-from-bracket.png" alt="" srcset=""> Logout</a>
+        </li>
+      </ul>
+    </div>
+    <a class="text-xl flex gap-1 items-center font-bold">English <img src="assets/logo.png" alt=""> জানালা</a>
+  </div>
+
+  <div class="navbar-end space-x-2">
+    <a class="btn btn-outline btn-primary"><img src="assets/fa-circle-question.png" alt="" srcset=""> FAQ</a>
+    <a class="btn btn-outline btn-primary"><img src="assets/fa-book-open.png" alt="" srcset=""> Learn</a>
+    <a class="btn btn-outline btn-primary"><img src="assets/fa-arrow-right-from-bracket.png" alt="" srcset=""> Logout</a>
+  </div>
+</div>
+</nav>
+
+<!-- navber end here -->
+
+<!-- hero section start here -->
+
+<section class="flex flex-col-reverse md:flex-row justify-between items-center mx-20">
+    <div class="space-y-5">
+        <h1 class="text-4xl font-bold"><span class="text-sky-400">English</span> is Easy!!</h1>
+        <p class="bangla-font">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা<br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে<br> যাবে অন্য একটি Level এ</p>
+        <div class="flex flex-col gap-2">
+            <input type="text" placeholder="User Name" class="input input-md" />
+        <input type="password" placeholder="Password" class="input input-md" />
+        </div>
+    </div>
+    <div><img src="assets/hero-student.png" alt="" srcset="" class="w-150 h-150"></div>
+</section>
+</header>
+<main class="mt-2">
+    <section>
+        <h1 class="text-2xl font-bold text-center"><span class="text-sky-400">Let's</span> Learn Vocabularies</h1>
+
+        <div class="flex justify-center gap-2 my-6" id="lessons-level">
+
+        </div>
+    </section>
+
+    <section class="grid grid-cols-3 bg-gray-200  gap-2 mx-10 " id="word-container">
+    </section>
+
+    <section class="mt-3 mx-10 h-full" id="no-selection">
+        <div class="bg-gray-200 shadow-xl text-center">
+        <div class="card-body">
+        <p>আপনি এখনো কোন Lesson Select করেন নি</p>
+        <h2 class="text-center text-2xl font-semibold">একটি Lesson Select করুন।</h2>
+        </div>
+        </div>
+    </section>
+    <section class="mt-3 mx-10 h-full hidden" id="no-lesson">
+        <div class="bg-gray-200 shadow-xl ">
+        <div class="card-body flex flex-col justify-center items-center">
+        <img src="assets/alert-error.png" alt="" srcset="" class="w-20 h-20 ">
+        <p>এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+        <h2 class="text-2xl font-semibold">নেক্সট Lesson এ যান</h2>
+        </div>
+        </div>
+    </section>
+
+    <section>
+    <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+    <h3 class="text-lg font-bold">Hello!</h3>
+    <p class="py-4">Press ESC key or click the button below to close</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+</section>
+</main>
+
+<script src="script/janala.js"></script>
+</body>
+</html>
