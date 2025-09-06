@@ -73,7 +73,7 @@
         </div>
     </section>
     <!-- search portion -->
-    <section class="flex justify-center mb-5" id="wordSearch">
+    <section class="flex flex-col justify-center items-center mb-5" >
       <label class="input">
   <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g
@@ -86,9 +86,10 @@
       <circle cx="11" cy="11" r="8"></circle>
       <path d="m21 21-4.3-4.3"></path>
     </g>
-  </svg>
-  <input type="search" required placeholder="Search Word" />
-</label>
+    </svg>
+    <input id="wordSearch" type="search" required placeholder="Search Word" />
+    </label>
+    <button class='btn w-20 mt-4' id="seachButton">Search</button>
     </section>
 
     <section class="grid grid-cols-3 bg-gray-200  gap-2 mx-10 " id="word-container">
@@ -108,6 +109,13 @@
         <img src="assets/alert-error.png" alt="" srcset="" class="w-20 h-20 ">
         <p>এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
         <h2 class="text-2xl font-semibold">নেক্সট Lesson এ যান</h2>
+        </div>
+        </div>
+    </section>
+    <section class="mt-3 mx-10 h-full hidden" id="search-result">
+        <div class="bg-gray-200 shadow-xl ">
+        <div class="card-body flex flex-col justify-center items-center">
+        <h2 class="text-2xl font-semibold">শব্দটি খুঁজে পাওয়া যায়নি<h2>
         </div>
         </div>
     </section>

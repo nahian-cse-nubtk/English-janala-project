@@ -37,6 +37,7 @@ const loadLevelWord= (level)=>{
 
 const displayCard = fullData =>{
     removeNoSelection(true);
+    resultNotFound(false);
     const wordContainer = document.getElementById('word-container');
     wordContainer.innerHTML = "";
     fullData.forEach(singleData=>{
@@ -128,5 +129,38 @@ const noLessonNow = (val) => {
         noLesson.classList.add('hidden');
     }
 };
+// search
 
+document.getElementById('seachButton').addEventListener("click", ()=>{
+    fetch('https://openapi.programming-hero.com/api/words/all')
+    .then(response=> response.json())
+    .then(data => checkWord(data.data));
+})
+
+const checkWord = (allData)=>{
+    const searchInput = document.getElementById('wordSearch').value.trim().toLowerCase();
+    const filterData = allData.filter(wordData=>wordData.word.toLowerCase().includes(searchInput));
+
+    if(filterData.length !== 0){
+        displayCard(filterData);
+
+    }
+    else
+    {
+        resultNotFound(true);
+        removeNoSelection(true);
+    }
+}
+
+const resultNotFound = (value)=>{
+ const notfound = document.getElementById('search-result');
+
+ if(value===true){
+    notfound.classList.remove('hidden');
+ }
+ else{
+    notfound.classList.add('hidden');
+ }
+
+}
 loadLesson();
