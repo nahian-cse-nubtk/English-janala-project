@@ -163,4 +163,32 @@ const resultNotFound = (value)=>{
  }
 
 }
+
+const allPlus = document.querySelectorAll(".plus")
+
+for(let plus of allPlus){
+    plus.addEventListener("click", ()=>{
+        const questionBox = plus.closest(".question");
+        const answer = questionBox.querySelector(".answer");
+        const plusButton = questionBox.querySelector(".plus");
+        const minusButton = questionBox.querySelector(".minus");
+        answer.classList.remove('hidden');
+        minusButton.classList.remove('hidden');
+        plusButton.classList.add('hidden');
+    })
+}
+
+const allminus = document.querySelectorAll(".minus")
+
+for(let minus of allminus){
+    minus.addEventListener("click", ()=>{
+        const questionBox = minus.closest(".question");
+        const answer = questionBox.querySelector(".answer");
+        const plusButton = questionBox.querySelector(".plus");
+        const minusButton = questionBox.querySelector(".minus");
+        answer.classList.add('hidden');
+        minusButton.classList.add('hidden');
+        plusButton.classList.remove('hidden');
+    })
+}
 loadLesson();
